@@ -1,0 +1,151 @@
+1.jQuery 阻止浏览器提交(事件对象.preventDefault()) (可以查询手册)：
+event.preventDefault()    阻止默认事件行为的触发。
+
+2.ThinkPHP四种URL模式：
+URL_COMMON    普通模式 URL （0）
+URL_PATHINFO  PATHINFO URL （1）
+URL_REWRITE   REWRITE URL （2）
+URL_COMPAT    兼容模式 URL （3）
+
+3.SESSION持久化存储位置：
+E:\tmp\tmp
+
+4.TP框架给页面设置跟踪信息，方便项目开发、调试(配置文件中设置)：
+'SHOW_PAGE_TRACE' => true,
+
+5."瞻前顾后"机制参考：
+参考路径：E:\WWW\tshp\ThinkPHP\Library\Think\Model.class.php(可以多看看，有助于了解TP框架底层)
+
+6.函数：substr_count (PHP 4, PHP 5, PHP 7)  返回值 该函数返回整型。 
+substr_count — 计算字串出现的次数
+说明 int substr_count ( string $haystack , string $needle [, int $offset = 0 [, int $length ]] )
+substr_count() 返回子字符串needle 在字符串 haystack 中出现的次数。注意 needle 区分大小写。 
+该函数不会计算重叠字符串。 
+
+7.Mysql删除表记录delete from和truncate table的区别：
+
+8.TP框架alias的用法：
+用于设置当前数据表的别名，便于使用其他的连贯操作例如join方法等
+
+9.RBAC：
+role  base  access  control  基于角色的用户访问权限控制
+
+10.函数strpos：
+strpos — 查找字符串首次出现的位置
+说明 mixed strpos ( string $haystack , mixed $needle [, int $offset = 0 ] )
+返回 needle 在 haystack 中首次出现的数字位置(0/1/2/3...),没有出现返回false。
+
+11.禁止翻墙访问(电商项目04---传智)：
+翻墙访问：
+用户访问超出本身规定的权限，进行了非法的访问
+限制翻墙访问
+越权访问
+限制：
+① 访问的权限超出本身的范围
+② 访问的权限还不是默认允许的
+③ 本身还不是超级管理员
+以上① 、②、③ 同时满足，就是“没有权利访问”
+非法访问的两种形式：
+① 自然操作访问非法权限
+② 人为访问非法权限
+
+之所以出现非法权限访问(翻墙)的情况，原因是 没有设置“访问控制过滤”功能。
+如何实现：用户访问的“控制器/操作方法”权限 必须在其“权限列表(角色对应的) ”中出现。
+为了使得“权限控制过滤”的代码集中，只编写一份，给后台控制器 找一个新的父类控制器，具体是__construct()构造方法实现过滤。
+
+12.getError---TP框架：
+在进行自动验证的时候，系统会对定义好的验证规则进行依次验证。如果某一条验证规则没有通过，则会报错，getError方法返回的错误信息（字符串）就是对应字段的验证规则里面的错误提示信息。(见手册)
+
+13.split：
+split — 用正则表达式将字符串分割到数组中
+说明 array split ( string $pattern , string $string [, int $limit ] )
+Tip 
+preg_split() 函数使用了 Perl 兼容正则表达式语法，通常是比 split() 更快的替代方案。如果不需要正则表达式的威力，则使用 explode() 更快，这样就不会招致正则表达式引擎的浪费。 
+本函数返回一个字符串数组，每个单元为 string 经区分大小写的正则表达式 pattern 作为边界分割出的子串。如果设定了 limit，则返回的数组最多包含 limit 个单元，而其中最后一个单元包含了 string 中剩余的所有部分。如果出错，则 split() 返回 FALSE。
+
+14.函数rtrim：
+rtrim — 删除字符串末端的空白字符（或者其他字符）
+
+15.函数substr_count：
+substr_count — 计算字串出现的次数
+
+说明 int substr_count ( string $haystack , string $needle [, int $offset = 0 [, int $length ]] )
+substr_count() 返回子字符串needle 在字符串 haystack 中出现的次数。注意 needle 区分大小写。 
+该函数不会计算重叠字符串。
+返回值 该函数返回整型。 
+
+16.str_repeat：
+str_repeat — 重复一个字符串
+说明 string str_repeat ( string $input , int $multiplier )
+返回 input 重复 multiplier 次后的结果。 
+参数 
+input待操作的字符串。 
+multiplierinput 被重复的次数。 
+multiplier 必须大于等于 0。如果 multiplier 被设置为 0，函数返回空字符串。 
+返回值 返回重复后的字符串。 
+
+17.ThinkPHP框架的自动完成机制：
+静态方式：在模型类里面通过$_auto属性定义处理规则。 
+动态方式：使用模型类的auto方法动态创建自动处理规则。 
+
+18.常量输出：
+{$Think.const.MODULE_NAME}
+或者
+{$Think.MODULE_NAME}
+
+19.str_replace：
+str_replace — 子字符串替换
+说明 mixed str_replace ( mixed $search , mixed $replace , mixed $subject [, int &$count ] )
+该函数返回一个字符串或者数组。该字符串或数组是将 subject 中全部的 search 都被 replace 替换之后的结果。 
+如果没有一些特殊的替换需求（比如正则表达式），你应该使用该函数替换 ereg_replace() 和 preg_replace()。
+
+20.mt_rand()：
+mt_rand - 生成更好的随机数
+int mt_rand ( int $min , int $max )
+min可选的、返回的最小值（默认：0） 
+max可选的、返回的最大值（默认：mt_getrandmax()) 
+
+
+注意：需要自行维护的(还未实现的功能)
+添加角色
+修改角色
+删除角色
+
+
+
+修改、删除权限
+系统后台每增加一个控制器/操作方法，就在权限里边给维护对应的数据。
+
+管理员的添加、修改、删除自行维护
+
+类型的修改、删除
+
+支付宝支付未做(个人不可以接入 即时到账 支付接口)【D:\视频+++\2016北京传智PHP培训42期\第41期PHP就业班(20150911)【2】\20160104-电商项目(09)】
+
+
+发现bug 或 未做的： 
+当前位置是：属性管理-》属性列表  类型转换时   没有修改和删除   需解决(电商项目04)
+
+当前位置是：商品管理-》商品修改  商品属性修改时有bug  需解决(电商项目05)[逻辑走得通，就是页面显示有问题]
+
+当前位置是：用户注册发送邮件有问题【包括:点击链接激活账户】 电商项目(06)-20151229 电商项目(07)-20151230
+
+商城上传：商城上传要多研究  电商项目(06)-20151229
+
+QQ登录：qq登录 电商项目(06)-20151229
+
+登录注册完善：登录注册需完善
+
+商品修改：加入推荐修改  有些小bug 电商项目(07)-20151230
+
+Linux系统memcache：Linux系统操作memcache 电商项目(07)-20151230
+
+需学习的地方：商品详情页的属性展示 电商项目(08)-20150101
+
+展示停下进度，过段时间再来完善剩下的：商品评论[发表评论 止]【20160105-电商项目(10)】
+
+总结：
+1：敲代码需要严谨，态度要端正，做事仔细，马虎不得！(字母的错误、中英逗号的区别 ...)
+2：要增强找错、排错能力，加快开发效率。
+3：静下心，稳定发展，技术有了，走哪都不怕！
+
